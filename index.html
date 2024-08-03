@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Personal Website</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-purple-900 to-black min-h-screen flex flex-col items-center py-4">
+    <div class="profile-card neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl flex flex-col md:flex-row mb-8 shadow-lg">
+        <div class="left-side flex flex-col items-center mb-4 md:mb-0">
+            <div class="relative">
+                <img src="assets/profile.png" alt="Profile Picture" class="rounded-full neon-border-profile">
+            </div>
+            <div class="social-links mt-4">
+                <a href="https://twitter.com/HitRedcord" target="_blank" class="flex items-center text-gray-400 hover:text-white mb-2">
+                    <i class="fab fa-twitter mr-2"></i>@HitRedcord
+                </a>
+                <a href="https://discord.com" target="_blank" class="flex items-center text-gray-400 hover:text-white mb-2">
+                    <i class="fab fa-discord mr-2"></i>HitRecord
+                </a>
+                <a href="mailto:kjainfotech@gmail" target="_blank" class="flex items-center text-gray-400 hover:text-white mb-2">
+                    <i class="fas fa-envelope mr-2"></i>kjainfotech@gmail.com
+                </a>
+                <a href="https://github.com/H1tRecord" target="_blank" class="flex items-center text-gray-400 hover:text-white mb-2">
+                    <i class="fab fa-github mr-2"></i>@H1tRecord
+                </a>
+            </div>
+        </div>
+        <div class="right-side md:ml-8">
+            <div class="about-me mb-6">
+                <h1 class="text-2xl font-bold text-center md:text-left">Hi! I'm <span class="text-purple-400">HitRecord</span>, an aspiring developer from the <span class="flag-colors">Philippines</span></h1>
+                <p class="mt-4 text-gray-400 text-center md:text-left">I love coding and creating innovative projects. I'm always eager to learn new technologies and improve my skills.</p>
+            </div>
+            <div class="feature-project bg-gray-800 p-4 rounded-md shadow-md">
+                <h2 class="text-xl font-semibold text-center md:text-left">Featured Project</h2>
+                <p class="mt-2 text-gray-400 text-center md:text-left">My featured project goes here. Although I don't have any at the moment. UwU</p>
+                <a href="https://github.com/H1tRecord?tab=repositories" target="_blank" class="mt-4 inline-block bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-md transition text-center md:text-left">View Project</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="skills-section neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4 text-center md:text-left">Skills</h2>
+        <p class="text-gray-400 mb-8 text-center md:text-left">These are tools or languages that I'm either fluent in, or have a decent amount of experience with.</p>
+        <div class="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div class="skill-card card">
+                <img src="assets/figma.png" alt="Figma" class="mb-2">
+                <h2>Figma</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/python.png" alt="Python" class="mb-2">
+                <h2>Python</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/html.png" alt="HTML" class="mb-2">
+                <h2>HTML</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/git.png" alt="Git" class="mb-2">
+                <h2>Git</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/vscode.png" alt="VS Code" class="mb-2">
+                <h2>VS Code</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/renpy.png" alt="Ren'Py" class="mb-2">
+                <h2>Ren'Py</h2>
+                <div class="skill-level text-purple-400">Beginner</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/sql.png" alt="SQL" class="mb-2">
+                <h2>SQL</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/php.png" alt="PHP" class="mb-2">
+                <h2>PHP</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-11/12 max-w-3xl text-center mt-8">
+        <p class="text-white">&copy; 2024 HitRecord. All rights reserved.</p>
+        <p class="text-white">Follow me on <a href="https://twitter.com/HitRedcord" target="_blank" class="text-purple-400">Twitter</a>, <a href="https://github.com/H1tRecord" target="_blank" class="text-purple-400">GitHub</a>, and <a href="https://only-fans.uk/HitRecord" target="_blank" class="text-purple-400">OnlyFans?</a>.</p>
+        <p class="text-white">Check out the <a href="https://github.com/H1tRecord/H1tRecord.github.io" target="_blank" class="text-purple-400">Source Code</a>!</p>
+    </footer>
+</body>
+</html>
