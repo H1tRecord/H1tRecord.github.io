@@ -10,11 +10,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gradient-to-br from-purple-900 to-black min-h-screen flex flex-col items-center py-4">
-    <div class="profile-card neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl flex flex-col md:flex-row mb-8 shadow-lg">
+    
+    <nav class="w-full bg-gray-900 text-white fixed top-0 left-0 shadow-lg z-10">
+        <div class="container mx-auto flex items-center justify-between px-4 py-2">
+            <div class="text-2xl font-bold">HitRecord</div>
+            <div class="hidden md:flex space-x-4">
+                <a href="#about" class="hover:text-purple-400">About Me</a>
+                <a href="#skills" class="hover:text-purple-400">Skills</a>
+                <a href="#projects" class="hover:text-purple-400">Projects</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div id="menu" class="hidden md:hidden flex flex-col space-y-2 bg-gray-800 px-4 py-2">
+            <a href="#about" class="hover:text-purple-400">About Me</a>
+            <a href="#skills" class="hover:text-purple-400">Skills</a>
+            <a href="#projects" class="hover:text-purple-400">Projects</a>
+        </div>
+    </nav>
+
+    <div id="about" class="profile-card neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl flex flex-col md:flex-row mb-8 shadow-lg">
         <div class="left-side flex flex-col items-center mb-4 md:mb-0">
             <div class="relative">
                 <img src="assets/profile.png" alt="Profile Picture" class="rounded-full neon-border-profile">
             </div>
+            <div id="time-date" class="text-center text-gray-400 mt-4"></div>
             <div class="social-links mt-4">
                 <a href="https://twitter.com/HitRedcord" target="_blank" class="flex items-center text-gray-400 hover:text-white mb-2">
                     <i class="fab fa-twitter mr-2"></i>@HitRedcord
@@ -37,13 +60,12 @@
             </div>
             <div class="feature-project bg-gray-800 p-4 rounded-md shadow-md">
                 <h2 class="text-xl font-semibold text-center md:text-left">Featured Project</h2>
-                <p class="mt-2 text-gray-400 text-center md:text-left">My featured project goes here. Although I don't have any at the moment. UwU</p>
-                <a href="https://github.com/H1tRecord?tab=repositories" target="_blank" class="mt-4 inline-block bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-md transition text-center md:text-left">View Project</a>
+                <p class="mt-2 text-gray-400 text-center md:text-left">This is where I put my featured project that I personally liked. Although there is none at the moment. UwU</p>
             </div>
         </div>
     </div>
     
-    <div class="skills-section neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl shadow-lg">
+    <div id="skills" class="skills-section neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl shadow-lg">
         <h2 class="text-2xl font-bold mb-4 text-center md:text-left">Skills</h2>
         <p class="text-gray-400 mb-8 text-center md:text-left">These are tools or languages that I'm either fluent in, or have a decent amount of experience with.</p>
         <div class="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -90,10 +112,63 @@
         </div>
     </div>
 
+    <div id="projects" class="projects-section neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl shadow-lg mt-8">
+        <h2 class="text-2xl font-bold mb-4 text-center md:text-left">Projects</h2>
+        <p class="text-gray-400 mb-8 text-center md:text-left">These are some of my popular repositories on GitHub.</p>
+        <div id="projects-grid" class="projects-grid flex flex-col gap-4">
+        </div>
+    </div>    
+
     <footer class="w-11/12 max-w-3xl text-center mt-8">
         <p class="text-white">&copy; 2024 HitRecord. All rights reserved.</p>
         <p class="text-white">Follow me on <a href="https://twitter.com/HitRedcord" target="_blank" class="text-purple-400">Twitter</a>, <a href="https://github.com/H1tRecord" target="_blank" class="text-purple-400">GitHub</a>, and <a href="https://only-fans.uk/HitRecord" target="_blank" class="text-purple-400">OnlyFans?</a>.</p>
         <p class="text-white">Check out the <a href="https://github.com/H1tRecord/H1tRecord.github.io" target="_blank" class="text-purple-400">Source Code</a>!</p>
     </footer>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            const menu = document.getElementById('menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+
+        async function fetchGitHubRepos() {
+            const username = 'H1tRecord';
+            const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`);
+            const repos = await response.json();
+
+            const projectsGrid = document.getElementById('projects-grid');
+            projectsGrid.innerHTML = '';
+
+            repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+
+            repos.forEach(repo => {
+                const repoCard = document.createElement('a');
+                repoCard.classList.add('project-card');
+                repoCard.href = repo.html_url;
+                repoCard.target = '_blank';
+                repoCard.innerHTML = `
+                    <h3>${repo.name}</h3>
+                    <p>${repo.description ? repo.description : 'No description available'}</p>
+                    <div class="star-counter"><i class="fas fa-star"></i> ${repo.stargazers_count}</div>
+                `;
+                projectsGrid.appendChild(repoCard);
+            });
+        }
+
+        fetchGitHubRepos();
+
+        function updateTime() {
+            const options = { timeZone: 'Asia/Manila', hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric', day: 'numeric', month: 'long', year: 'numeric' };
+            const now = new Date().toLocaleString('en-US', options);
+            document.getElementById('time-date').innerText = now;
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>
