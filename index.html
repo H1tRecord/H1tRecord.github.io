@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Personal Website</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YWQMKTCY02"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YWQMKTCY02');
+    </script>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-purple-900 to-black min-h-screen flex flex-col items-center py-4">
+    
+    <nav class="w-full bg-gray-900 text-white fixed top-0 left-0 shadow-lg z-10">
+        <div class="container mx-auto flex items-center justify-between px-4 py-2">
+            <div class="text-2xl font-bold">HitRecord</div>
+            <div class="hidden md:flex space-x-4">
+                <a href="#about" class="hover:text-purple-400">About Me</a>
+                <a href="#skills" class="hover:text-purple-400">Skills</a>
+                <a href="#projects" class="hover:text-purple-400">Projects</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div id="menu" class="hidden md:hidden flex flex-col space-y-2 bg-gray-800 px-4 py-2">
+            <a href="#about" class="hover:text-purple-400">About Me</a>
+            <a href="#skills" class="hover:text-purple-400">Skills</a>
+            <a href="#projects" class="hover:text-purple-400">Projects</a>
+        </div>
+    </nav>
+
+    <div id="about" class="profile-card neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl flex flex-col md:flex-row mb-8 shadow-lg">
+        <div class="left-side flex flex-col items-center mb-4 md:mb-0">
+            <div class="relative">
+                <img src="assets/profile.png" alt="Profile Picture" class="rounded-full neon-border-profile">
+            </div>
+            <div id="time-date" class="text-center text-gray-400 mt-4"></div>
+            <div class="social-links mt-4">
+                <a href="https://twitter.com/HitRedcord" target="_blank" class="flex items-center text-gray-400 hover:text-white mb-2">
+                    <i class="fab fa-twitter mr-2"></i>@HitRedcord
+                </a>
+                <a href="https://discord.com" target="_blank" class="flex items-center text-gray-400 hover:text-white mb-2">
+                    <i class="fab fa-discord mr-2"></i>HitRecord
+                </a>
+                <a href="mailto:kjainfotech@gmail" target="_blank" class="flex items-center text-gray-400 hover:text-white mb-2">
+                    <i class="fas fa-envelope mr-2"></i>kjainfotech@gmail.com
+                </a>
+                <a href="https://github.com/H1tRecord" target="_blank" class="flex items-center text-gray-400 hover:text-white mb-2">
+                    <i class="fab fa-github mr-2"></i>@H1tRecord
+                </a>
+            </div>
+        </div>
+        <div class="right-side md:ml-8">
+            <div class="about-me mb-6">
+                <h1 class="text-2xl font-bold text-center md:text-left">Hi! I'm <span class="text-purple-400">HitRecord</span>, an aspiring developer from the <span class="flag-colors">Philippines</span></h1>
+                <p class="mt-4 text-gray-400 text-center md:text-left">I love coding and creating innovative projects. I'm always eager to learn new technologies and improve my skills.</p>
+            </div>
+            <div class="support-me-section neon-border bg-gray-900 p-6 rounded-lg shadow-lg mt-8">
+                <h2 class="text-3xl font-bold text-center md:text-left text-purple-400">Support My Journey</h2>
+                <p class="mt-4 text-gray-300 text-center md:text-left">If you enjoy my work and want to fuel my creativity, consider buying me a coffee on Ko-fi!</p>
+                <div class="mt-6 flex justify-center">
+                    <a href="https://ko-fi.com/HitRecord" target="_blank" class="kofi-button text-white font-bold py-3 px-6 rounded-lg">
+                        <i class="fas fa-coffee mr-2"></i> Buy me a coffee
+                    </a>
+                </div>
+            </div>            
+        </div>
+    </div>
+    
+    <div id="skills" class="skills-section neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4 text-center md:text-left">Skills</h2>
+        <p class="text-gray-400 mb-8 text-center md:text-left">These are tools or languages that I'm either fluent in, or have a decent amount of experience with.</p>
+        <div class="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div class="skill-card card">
+                <img src="assets/figma.png" alt="Figma" class="mb-2">
+                <h2>Figma</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/python.png" alt="Python" class="mb-2">
+                <h2>Python</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/html.png" alt="HTML" class="mb-2">
+                <h2>HTML</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/git.png" alt="Git" class="mb-2">
+                <h2>Git</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/vscode.png" alt="VS Code" class="mb-2">
+                <h2>VS Code</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/renpy.png" alt="Ren'Py" class="mb-2">
+                <h2>Ren'Py</h2>
+                <div class="skill-level text-purple-400">Beginner</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/sql.png" alt="SQL" class="mb-2">
+                <h2>SQL</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+            <div class="skill-card card">
+                <img src="assets/php.png" alt="PHP" class="mb-2">
+                <h2>PHP</h2>
+                <div class="skill-level text-purple-400">Intermediate</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects" class="projects-section neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl shadow-lg mt-8">
+        <h2 class="text-2xl font-bold mb-4 text-center md:text-left">Projects</h2>
+        <p class="text-gray-400 mb-8 text-center md:text-left">These are some of my popular repositories on GitHub.</p>
+        <div id="projects-grid" class="projects-grid flex flex-col gap-4">
+        </div>
+    </div>    
+
+    <footer class="w-11/12 max-w-3xl text-center mt-8">
+        <p class="text-white">&copy; 2024 HitRecord. All rights reserved.</p>
+        <p class="text-white">Follow me on <a href="https://twitter.com/HitRedcord" target="_blank" class="text-purple-400">Twitter</a> and <a href="https://github.com/H1tRecord" target="_blank" class="text-purple-400">GitHub</a>.</p>
+        <p class="text-white">Check out the <a href="https://github.com/H1tRecord/H1tRecord.github.io" target="_blank" class="text-purple-400">Source Code</a>!</p>
+    </footer>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            const menu = document.getElementById('menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+
+        async function fetchGitHubRepos() {
+            const username = 'H1tRecord';
+            const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`);
+            const repos = await response.json();
+
+            const projectsGrid = document.getElementById('projects-grid');
+            projectsGrid.innerHTML = '';
+
+            repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+
+            repos.forEach(repo => {
+                const repoCard = document.createElement('a');
+                repoCard.classList.add('project-card');
+                repoCard.href = repo.html_url;
+                repoCard.target = '_blank';
+                repoCard.innerHTML = `
+                    <h3>${repo.name}</h3>
+                    <p>${repo.description ? repo.description : 'No description available'}</p>
+                    <div class="star-counter"><i class="fas fa-star"></i> ${repo.stargazers_count}</div>
+                `;
+                projectsGrid.appendChild(repoCard);
+            });
+        }
+
+        fetchGitHubRepos();
+
+        function updateTime() {
+            const options = { timeZone: 'Asia/Manila', hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric', day: 'numeric', month: 'long', year: 'numeric' };
+            const now = new Date().toLocaleString('en-US', options);
+            document.getElementById('time-date').innerText = now;
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
