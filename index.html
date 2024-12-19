@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YWQMKTCY02"></script>
     <script>
@@ -14,7 +14,67 @@
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        @keyframes neon-border {
+            0%, 100% {
+                border-color: rgba(138, 43, 226, 1);
+                box-shadow: 0 0 10px rgba(138, 43, 226, 0.7), 0 0 20px rgba(138, 43, 226, 0.7);
+            }
+            50% {
+                border-color: rgba(138, 43, 226, 0.5);
+                box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+            }
+        }
+
+        @keyframes neon-border-profile {
+            0%, 100% {
+                border-color: rgba(138, 43, 226, 1);
+                box-shadow: 0 0 5px rgba(138, 43, 226, 0.7), 0 0 10px rgba(138, 43, 226, 0.7);
+            }
+            25%, 75% {
+                border-color: rgba(148, 0, 211, 1);
+                box-shadow: 0 0 10px rgba(148, 0, 211, 0.7);
+            }
+            50% {
+                border-color: rgba(186, 85, 211, 1);
+                box-shadow: 0 0 15px rgba(186, 85, 211, 0.7);
+            }
+        }
+
+        @keyframes flag-colors-animation {
+            0%, 100% {
+                color: white;
+            }
+            25% {
+                color: yellow;
+            }
+            50% {
+                color: blue;
+            }
+            75% {
+                color: red;
+            }
+        }
+
+        .neon-border {
+            border: 4px solid;
+            animation: neon-border 2s infinite alternate;
+        }
+
+        .neon-border-profile {
+            border: 4px solid;
+            border-radius: 50%;
+            animation: neon-border-profile 2s infinite alternate;
+        }
+
+        .flag-colors {
+            animation: flag-colors-animation 10s infinite;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body class="bg-gradient-to-br from-purple-900 to-black min-h-screen flex flex-col items-center py-4">
     
@@ -39,13 +99,13 @@
         </div>
     </nav>
 
-    <div id="about" class="profile-card neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl flex flex-col md:flex-row mb-8 shadow-lg">
-        <div class="left-side flex flex-col items-center mb-4 md:mb-0">
+    <div id="about" class="bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl flex flex-col md:flex-row mb-8 shadow-lg mt-16 neon-border">
+        <div class="flex flex-col items-center mb-4 md:mb-0">
             <div class="relative">
-                <img src="assets/profile.png" alt="Profile Picture" class="rounded-full neon-border-profile">
+                <img src="assets/profile.png" alt="Profile Picture" class="rounded-full neon-border-profile w-32 h-32">
             </div>
-            <div id="time-date" class="text-center text-gray-400 mt-4"></div>
-            <div class="social-links mt-4">
+            <div id="time-date" class="text-center text-gray-400 mt-4 bg-opacity-10 bg-white p-2 rounded-lg shadow-md"></div>
+            <div class="mt-4">
                 <a href="https://twitter.com/HitRedcord" target="_blank" class="flex items-center text-gray-400 hover:text-white mb-2">
                     <i class="fab fa-twitter mr-2"></i>@HitRedcord
                 </a>
@@ -60,16 +120,16 @@
                 </a>
             </div>
         </div>
-        <div class="right-side md:ml-8">
-            <div class="about-me mb-6">
+        <div class="md:ml-8">
+            <div class="mb-6">
                 <h1 class="text-2xl font-bold text-center md:text-left">Hi! I'm <span class="text-purple-400">HitRecord</span>, an aspiring developer from the <span class="flag-colors">Philippines</span></h1>
                 <p class="mt-4 text-gray-400 text-center md:text-left">I love coding and creating innovative projects. I'm always eager to learn new technologies and improve my skills.</p>
             </div>
-            <div class="support-me-section neon-border bg-gray-900 p-6 rounded-lg shadow-lg mt-8">
-                <h2 class="text-3xl font-bold text-center md:text-left text-purple-400">Support My Journey</h2>
-                <p class="mt-4 text-gray-300 text-center md:text-left">If you enjoy my work and want to fuel my creativity, consider buying me a coffee on Ko-fi!</p>
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg mt-8 neon-border text-center">
+                <h2 class="text-3xl font-bold text-purple-400">Support My Journey</h2>
+                <p class="mt-4 text-gray-300">If you enjoy my work and want to fuel my creativity, consider buying me a coffee on Ko-fi!</p>
                 <div class="mt-6 flex justify-center">
-                    <a href="https://ko-fi.com/HitRecord" target="_blank" class="kofi-button text-white font-bold py-3 px-6 rounded-lg">
+                    <a href="https://ko-fi.com/HitRecord" target="_blank" class="bg-gradient-to-r from-pink-500 to-purple-500 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform text-white font-bold py-3 px-6 rounded-lg">
                         <i class="fas fa-coffee mr-2"></i> Buy me a coffee
                     </a>
                 </div>
@@ -77,57 +137,57 @@
         </div>
     </div>
     
-    <div id="skills" class="skills-section neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl shadow-lg">
+    <div id="skills" class="bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl shadow-lg neon-border">
         <h2 class="text-2xl font-bold mb-4 text-center md:text-left">Skills</h2>
         <p class="text-gray-400 mb-8 text-center md:text-left">These are tools or languages that I'm either fluent in, or have a decent amount of experience with.</p>
-        <div class="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <div class="skill-card card">
-                <img src="assets/figma.png" alt="Figma" class="mb-2">
-                <h2>Figma</h2>
-                <div class="skill-level text-purple-400">Intermediate</div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center text-center transform hover:scale-105 transition-transform">
+                <img src="assets/figma.png" alt="Figma" class="mb-2 w-16 h-16">
+                <h2 class="text-lg font-bold">Figma</h2>
+                <div class="text-purple-400 mt-2">Intermediate</div>
             </div>
-            <div class="skill-card card">
-                <img src="assets/python.png" alt="Python" class="mb-2">
-                <h2>Python</h2>
-                <div class="skill-level text-purple-400">Intermediate</div>
+            <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center text-center transform hover:scale-105 transition-transform">
+                <img src="assets/python.png" alt="Python" class="mb-2 w-16 h-16">
+                <h2 class="text-lg font-bold">Python</h2>
+                <div class="text-purple-400 mt-2">Intermediate</div>
             </div>
-            <div class="skill-card card">
-                <img src="assets/html.png" alt="HTML" class="mb-2">
-                <h2>HTML</h2>
-                <div class="skill-level text-purple-400">Intermediate</div>
+            <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center text-center transform hover:scale-105 transition-transform">
+                <img src="assets/html.png" alt="HTML" class="mb-2 w-16 h-16">
+                <h2 class="text-lg font-bold">HTML</h2>
+                <div class="text-purple-400 mt-2">Intermediate</div>
             </div>
-            <div class="skill-card card">
-                <img src="assets/git.png" alt="Git" class="mb-2">
-                <h2>Git</h2>
-                <div class="skill-level text-purple-400">Intermediate</div>
+            <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center text-center transform hover:scale-105 transition-transform">
+                <img src="assets/git.png" alt="Git" class="mb-2 w-16 h-16">
+                <h2 class="text-lg font-bold">Git</h2>
+                <div class="text-purple-400 mt-2">Intermediate</div>
             </div>
-            <div class="skill-card card">
-                <img src="assets/vscode.png" alt="VS Code" class="mb-2">
-                <h2>VS Code</h2>
-                <div class="skill-level text-purple-400">Intermediate</div>
+            <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center text-center transform hover:scale-105 transition-transform">
+                <img src="assets/vscode.png" alt="VS Code" class="mb-2 w-16 h-16">
+                <h2 class="text-lg font-bold">VS Code</h2>
+                <div class="text-purple-400 mt-2">Intermediate</div>
             </div>
-            <div class="skill-card card">
-                <img src="assets/renpy.png" alt="Ren'Py" class="mb-2">
-                <h2>Ren'Py</h2>
-                <div class="skill-level text-purple-400">Beginner</div>
+            <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center text-center transform hover:scale-105 transition-transform">
+                <img src="assets/renpy.png" alt="Ren'Py" class="mb-2 w-16 h-16">
+                <h2 class="text-lg font-bold">Ren'Py</h2>
+                <div class="text-purple-400 mt-2">Beginner</div>
             </div>
-            <div class="skill-card card">
-                <img src="assets/sql.png" alt="SQL" class="mb-2">
-                <h2>SQL</h2>
-                <div class="skill-level text-purple-400">Intermediate</div>
+            <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center text-center transform hover:scale-105 transition-transform">
+                <img src="assets/sql.png" alt="SQL" class="mb-2 w-16 h-16">
+                <h2 class="text-lg font-bold">SQL</h2>
+                <div class="text-purple-400 mt-2">Intermediate</div>
             </div>
-            <div class="skill-card card">
-                <img src="assets/php.png" alt="PHP" class="mb-2">
-                <h2>PHP</h2>
-                <div class="skill-level text-purple-400">Intermediate</div>
+            <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center text-center transform hover:scale-105 transition-transform">
+                <img src="assets/php.png" alt="PHP" class="mb-2 w-16 h-16">
+                <h2 class="text-lg font-bold">PHP</h2>
+                <div class="text-purple-400 mt-2">Intermediate</div>
             </div>
         </div>
     </div>
 
-    <div id="projects" class="projects-section neon-border bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl shadow-lg mt-8">
+    <div id="projects" class="bg-gray-900 text-white rounded-lg p-8 w-11/12 max-w-3xl shadow-lg mt-8 neon-border">
         <h2 class="text-2xl font-bold mb-4 text-center md:text-left">Projects</h2>
         <p class="text-gray-400 mb-8 text-center md:text-left">These are some of my popular repositories on GitHub.</p>
-        <div id="projects-grid" class="projects-grid flex flex-col gap-4">
+        <div id="projects-grid" class="flex flex-col gap-4">
         </div>
     </div>    
 
@@ -159,13 +219,13 @@
 
             repos.forEach(repo => {
                 const repoCard = document.createElement('a');
-                repoCard.classList.add('project-card');
+                repoCard.classList.add('bg-gray-800', 'rounded-lg', 'p-4', 'flex', 'flex-col', 'items-start', 'text-left', 'transform', 'hover:scale-105', 'transition-transform', 'border', 'border-gray-700', 'hover:border-purple-400', 'hover:shadow-lg', 'text-white', 'no-underline');
                 repoCard.href = repo.html_url;
                 repoCard.target = '_blank';
                 repoCard.innerHTML = `
-                    <h3>${repo.name}</h3>
-                    <p>${repo.description ? repo.description : 'No description available'}</p>
-                    <div class="star-counter"><i class="fas fa-star"></i> ${repo.stargazers_count}</div>
+                    <h3 class="text-xl font-bold text-purple-400">${repo.name}</h3>
+                    <p class="text-gray-400">${repo.description ? repo.description : 'No description available'}</p>
+                    <div class="flex items-center text-yellow-400 mt-2"><i class="fas fa-star mr-1"></i> ${repo.stargazers_count}</div>
                 `;
                 projectsGrid.appendChild(repoCard);
             });
@@ -181,6 +241,28 @@
 
         updateTime();
         setInterval(updateTime, 1000);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const offsetPosition = targetElement.offsetTop - document.querySelector('nav').offsetHeight;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('hitrecord', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#ff38b8',
+        'floating-chat.donateButton.text-color': '#fff'
+      });
     </script>
 </body>
 </html>
